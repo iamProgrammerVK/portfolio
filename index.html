@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISHNUKUMAR | Full-Stack, Game Dev, & Data Analyst</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Define the accent color and fonts for Tailwind */
+        :root {
+            --color-accent: #6366f1; /* Indigo */
+            --color-accent-light: #a5b4fc;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* gray-900 */
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif; /* Fallback if Inter fails */
+        }
+
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Style for the active nav link */
+        .nav-link.active {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+        
+        /* A subtle gradient glow for the hero image */
+        .hero-image-glow {
+            position: relative;
+        }
+        .hero-image-glow::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 9999px;
+            background: var(--color-accent);
+            opacity: 0.2;
+            filter: blur(40px);
+            transition: opacity 0.3s;
+        }
+        .hero-image-glow:hover::after {
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <header class="sticky top-0 z-50 w-full bg-gray-900/70 backdrop-blur-md border-b border-gray-700/50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-black font-mono">
+                    VK<span class="text-indigo-400">.DEV</span>
+                </div>
+                
+                <nav id="navbar" class="hidden sm:flex space-x-6">
+                    <a href="#about" class="nav-link text-gray-300 hover:text-indigo-400 transition-colors duration-200">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-indigo-400 transition-colors duration-200">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-indigo-400 transition-colors duration-200">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-indigo-400 transition-colors duration-200">Contact</a>
+                </nav>
+
+                <div class="sm:hidden">
+                    <button id="menu-btn" type="button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden sm:hidden fixed top-16 left-0 w-full h-screen bg-gray-900 bg-opacity-95">
+            <nav class="flex flex-col items-center justify-center h-1/2 space-y-8">
+                <a href="#about" class="nav-link text-2xl font-bold text-gray-300 hover:text-indigo-400 transition-colors duration-200">About</a>
+                <a href="#skills" class="nav-link text-2xl font-bold text-gray-300 hover:text-indigo-400 transition-colors duration-200">Skills</a>
+                <a href="#projects" class="nav-link text-2xl font-bold text-gray-300 hover:text-indigo-400 transition-colors duration-200">Projects</a>
+                <a href="#contact" class="nav-link text-2xl font-bold text-gray-300 hover:text-indigo-400 transition-colors duration-200">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <section id="hero" class="min-h-[70vh] lg:min-h-[90vh] grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center py-20 lg:py-0">
+            
+            <div class="hero-text text-center lg:text-left">
+                <p class="font-mono text-indigo-400">Hello, I'm</p>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white mt-2">VISHNUKUMAR</h1>
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-400 mt-4">
+                    Full-Stack Web Developer • Game Developer • Data Analyst
+                </h2>
+                <p class="text-base sm:text-lg text-gray-300 mt-6 max-w-xl mx-auto lg:mx-0">
+                    A dedicated engineer bridging the worlds of interactive media, scalable web systems, and data-driven insights.
+                </p>
+                <a href="https://drive.google.com/file/d/1GvfSLPqVDIBjcqWb2j3gEkTPsO39tEG_/view?usp=sharing" class="inline-block mt-10 px-8 py-3 bg-indigo-600 text-white font-bold rounded-full shadow-lg hover:bg-indigo-500 transition-all duration-200 transform hover:-translate-y-1">
+                    Resume My CV
+                </a>
+            </div>
+            
+            <div class="hero-image hidden sm:flex justify-center lg:justify-end">
+                <div class="hero-image-glow">
+                    <img src="hero1.png" 
+                         onerror="this.src='https://placehold.co/400x400/111827/6366f1?text=VK'" 
+                         alt="VISHNUKUMAR Profile Picture" 
+                         class="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-full border-4 border-indigo-700 shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 sm:py-24">
+            <h2 class="text-2xl sm:text-4xl font-black text-center font-mono text-white">
+                <span class="text-indigo-400">//</span> About Me
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 sm:mt-16 items-start">
+                <div class="md:col-span-2 text-base sm:text-lg text-gray-300 space-y-6">
+                    <p>
+                        My engineering background has instilled a rigorous, problem-solving approach across multiple domains: crafting <strong class="text-indigo-300">robust web backends</strong> (Node, Python), designing <strong class="text-indigo-300">immersive game experiences</strong> (Unity, C#), and deriving <strong class="text-indigo-300">actionable insights</strong> from complex data (PowerBI, SQL).
+                    </p>
+                    <p>
+                        I believe that great software is both functional and beautifully crafted. I am constantly exploring new technologies to ensure the solutions I deliver are future-proof and performant.
+                    </p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-xl">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-4">Contact Info</h3>
+                    <p class="text-gray-300">Email:</p>
+                    <a href="mailto:iamvishnukumar.a@gmail.com" class="text-sm text-indigo-300 hover:underline break-words">iamvishnukumar.a@gmail.com</a>
+                    <p class="mt-4 text-gray-300">Phone:</p>
+                    <p class="text-sm text-indigo-300">+91 70928 86792</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 sm:py-24">
+            <h2 class="text-2xl sm:text-4xl font-black text-center font-mono text-white">
+                <span class="text-indigo-400">//</span> Skills & Tech Stack
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-12 sm:mt-16">
+                <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-2 transition-all duration-300 border border-gray-700">
+                    <h4 class="text-base sm:text-xl font-bold text-indigo-400 font-mono mb-3">Web Full-Stack</h4>
+                    <ul class="text-xs sm:text-sm text-gray-300 space-y-1">
+                        <li>React, JS, HTML, CSS</li>
+                        <li>Node.js, Express, Python</li>
+                        <li>MongoDB, PostgreSQL</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-2 transition-all duration-300 border border-gray-700">
+                    <h4 class="text-base sm:text-xl font-bold text-indigo-400 font-mono mb-3">Game Development</h4>
+                    <ul class="text-xs sm:text-sm text-gray-300 space-y-1">
+                        <li>Unity Engine</li>
+                        <li>C# Programming</li>
+                        <li>2D,3D Games Development</li>
+                        <li>Game Designing</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-2 transition-all duration-300 border border-gray-700">
+                    <h4 class="text-base sm:text-xl font-bold text-indigo-400 font-mono mb-3">Data Analysis</h4>
+                    <ul class="text-xs sm:text-sm text-gray-300 space-y-1">
+                        <li>PowerBI / Dashboards</li>
+                        <li>Python (Pandas, NumPy)</li>
+                        <li>MySQL / Excel</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-2 transition-all duration-300 border border-gray-700">
+                    <h4 class="text-base sm:text-xl font-bold text-indigo-400 font-mono mb-3">Core & DevOps</h4>
+                    <ul class="text-xs sm:text-sm text-gray-300 space-y-1">
+                        <li>Git / GitHub</li>
+                        <li>Java / C++ / Python</li>
+                        <li>Cloud (AWS/Netlify)</li>
+                        <li>AI Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 sm:py-24">
+            <h2 class="text-2xl sm:text-4xl font-black text-center font-mono text-white">
+                <span class="text-indigo-400">//</span> Featured Projects
+            </h2>
+            <div class="space-y-12 sm:space-y-20 mt-12 sm:mt-16">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                    <div class="lg:col-span-3 order-last lg:order-first">
+                        <h3 class="text-xl sm:text-2xl font-bold text-indigo-400 font-mono mb-3">Enterprise E-Library Platform</h3>
+                        <p class="text-gray-300 mb-6">
+                            A fully functional digital library system with advanced search, user authentication, and secure payment gateway integration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">Node.js</span>
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">React</span>
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <a href="www.evagupu.com" target="_blank" class="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 transition-all duration-200">
+                            Live Demo Soon
+                        </a>
+                    </div>
+                    <div class="lg:col-span-2 order-first lg:order-last rounded-lg overflow-hidden border-2 border-gray-700 shadow-xl">
+                        <img src="https://placehold.co/600x360/1f2937/a5b4fc?text=Web+App+Screenshot" alt="E-Library Screenshot" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                    <div class="lg:col-span-2 order-first rounded-lg overflow-hidden border-2 border-gray-700 shadow-xl">
+                        <img src="https://placehold.co/600x360/1f2937/a5b4fc?text=Game+Screenshot" alt="2D Platformer Screenshot" class="w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-3 order-last">
+                        <h3 class="text-xl sm:text-2xl font-bold text-indigo-400 font-mono mb-3">C# / Unity 2D Platformer</h3>
+                        <p class="text-gray-300 mb-6">
+                            A 2D platforming game built in Unity, showcasing skills in physics implementation, animation scripting, and object-oriented design in C#.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">Unity</span>
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">C#</span>
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">2D Physics</span>
+                        </div>
+                        <a href="#" target="_blank" class="px-6 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition-all duration-200">
+                            Watch Gameplay
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                    <div class="lg:col-span-3 order-last lg:order-first">
+                        <h3 class="text-xl sm:text-2xl font-bold text-indigo-400 font-mono mb-3">Interactive Business KPI Dashboard</h3>
+                        <p class="text-gray-300 mb-6">
+                            Data visualization project using PowerBI and SQL to track key performance indicators (KPIs) and deliver actionable business intelligence.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">PowerBI</span>
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">MySQL</span>
+                            <span class="text-xs font-mono bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">Data Analysis</span>
+                        </div>
+                        <a href="#" target="_blank" class="px-6 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition-all duration-200">
+                            View Report
+                        </a>
+                    </div>
+                    <div class="lg:col-span-2 order-first lg:order-last rounded-lg overflow-hidden border-2 border-gray-700 shadow-xl">
+                        <img src="https://placehold.co/600x360/1f2937/a5b4fc?text=Dashboard+Screenshot" alt="Dashboard Screenshot" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 sm:py-24 text-center">
+            <h2 class="text-2xl sm:text-4xl font-black font-mono text-white">
+                <span class="text-indigo-400">//</span> Get In Touch
+            </h2>
+            <p class="text-lg sm:text-xl text-white font-bold mt-8">Let's build something exceptional.</p>
+            <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mt-4 mb-10">
+                I am available for ambitious projects, consulting, or part-time roles. Reach out via email, or connect with me on social media.
+            </p>
+            
+            <a href="mailto:iamvishnukumar.a@gmail.com" class="inline-block px-10 py-4 bg-indigo-600 text-white text-lg font-bold rounded-full shadow-lg hover:bg-indigo-500 transition-all duration-200 transform hover:-translate-y-1">
+                Email Me Now
+            </a>
+
+            <div class="flex justify-center space-x-6 mt-16">
+                <a href="https://www.linkedin.com/in/iamvishnukumar/" target="_blank" class="text-gray-400 hover:text-indigo-400 transition-colors duration-200" aria-label="LinkedIn" title="LinkedIn">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11.01 0zM3 8.98h3.96V21H3zM8.98 8.98h3.8v1.64h.05c.53-1 1.82-2.06 3.74-2.06 4 0 4.74 2.63 4.74 6.05V21h-3.96v-5.7c0-1.36-.02-3.11-1.89-3.11-1.9 0-2.19 1.49-2.19 3.01V21h-3.96z"/></svg>
+                </a>
+                <a href="https://github.com/iamProgrammerVK" target="_blank" class="text-gray-400 hover:text-indigo-400 transition-colors duration-200" aria-label="GitHub" title="GitHub">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.163 6.83 9.49.5.092.682-.218.682-.483 0-.237-.008-.868-.013-1.7c-2.78.604-3.37-.828-3.37-.828-.454-1.157-1.109-1.465-1.109-1.465-.907-.62.068-.607.068-.607 1.004.07 1.53.948 1.53.948.89 1.528 2.336 1.086 2.907.829.091-.643.349-1.086.634-1.338-2.22-.252-4.555-1.11-4.555-4.943 0-1.09.39-1.986 1.026-2.684-.103-.252-.446-1.268.098-2-2.65 0 0 .837-.27 2.75 1.025.797-.222 1.65-.333 2.503-.333s1.705.111 2.503.333c1.913-1.295 2.75-1.025 2.75-1.025.544 1.382.201 2.398.098 2.65.636.698 1.026 1.594 1.026 2.684 0 3.84-2.339 4.686-4.566 4.935.359.307.678.915.678 1.848 0 1.338-.013 2.417-.013 2.744 0 .268.182.578.688.484C19.136 20.163 22 16.419 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@InstructByAI" target="_blank" class="text-gray-400 hover:text-indigo-400 transition-colors duration-200" aria-label="YouTube" title="YouTube">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2A51.37 51.37 0 0012 3c-2.3 0-5.3.29-8.6.61a2.78 2.78 0 00-1.94 2A29.8 29.8 0 001 12a29.8 29.8 0 00.46 5.58 2.78 2.78 0 001.94 2c3.3.32 6.3.61 8.6.61s5.3-.29 8.6-.61a2.78 2.78 0 001.94-2A29.8 29.8 0 0023 12a29.8 29.8 0 00-.46-5.58zM9.7 15.69V8.31L15.68 12 9.7 15.69z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/gamedev_vk" target="_blank" class="text-gray-400 hover:text-indigo-400 transition-colors duration-200" aria-label="Instagram" title="Instagram">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/></svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 border-t border-gray-800 text-gray-500">
+        Built by VISHNUKUMAR | Powered by VK | &copy; <span id="year">2021</span>
+    </footer>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Mobile Menu Toggle ---
+        const menuBtn = document.gantElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+        const body = document.body;
+
+        const toggleMenu = () => {
+            const isMenuOpen = mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden', !isMenuOpen);
+            iconClose.classList.toggle('hidden', isMenuOpen);
+            
+            // Prevents scrolling of the main page when the menu is open
+            if (!isMenuOpen) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = 'auto';
+            }
+        };
+        
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // --- Close Mobile Menu When Link is Clicked ---
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // --- UX Improvement: Active Nav Link Highlight ---
+        const sections = document.querySelectorAll('section');
+        const desktopNavLinks = document.querySelectorAll('#navbar .nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = 'hero'; // Default to hero
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) { 
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update Desktop Links
+            desktopNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Update Mobile Links
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
